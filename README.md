@@ -36,19 +36,18 @@ Diese Demo zeigt, wie man mit **Skaffold**, **Kind** (Kubernetes in Docker) und 
 kind create cluster --config kind-config.yaml
 kubectl label node kind-control-plane ingress-ready=true
 kubectl apply -k github.com/kubernetes/ingress-nginx/deploy/static/provider/kind
-kubectl wait --namespace ingress-nginx --for=condition=Ready pod -l app.kubernetes.io/component=controller --timeout=90s
+```
 2. Projekt starten
-bash
-Kopieren
-Bearbeiten
+```bash
 skaffold dev
+```
 📦 Das startet:
 
-Docker-Build des Images
+- Docker-Build des Images
 
-Deployment in Kind
+- Deployment in Kind
 
-Exponierung unter: http://localhost:8080
+- Exponierung unter: http://localhost:8080
 
 💡 Was zeigt diese Demo?
 Automatisches Build + Deployment mit Live-Reload (skaffold dev)
