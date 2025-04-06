@@ -6,7 +6,7 @@ build:
     useDockerCLI: true
     useBuildkit: true
   artifacts:
-    - image: ghcr.io/professorschuster/skaffold-demo
+    - image: ghcr.io/ProfessorSchuster/skaffold-demo
       context: .
       docker:
         dockerfile: Dockerfile

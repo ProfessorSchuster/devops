@@ -1,11 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Skaffold Demo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdf6f9;
+      color: #333;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    h1 {
+      color: #ff69b4;
+      font-size: 3rem;
+    }
+
+    h2 {
+      color: #555;
+      font-weight: 400;
+    }
+
+    .heart {
+      font-size: 4rem;
+      animation: pulse 1s infinite alternate;
+      margin-top: 2rem;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.2); }
+    }
+
+    .button {
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #ffb6c1;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background-color: #ff69b4;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello from Skaffold! :)</h1>
-  <h2>TestWelcome to the Skaffold demo application.</h2>
-  <p>This is a simple web application to demonstrate the use of Skaffold for continuous development.</p>
+  <h1>Hello from Skaffold! 💖</h1>
+  <h2>Welcome to the cutest demo in DevOps history!</h2>
+  <p>This is a playful HTML page for hot-reloading with Skaffold. Try changing things!</p>
+
+  <div class="heart">💗</div>
+
+  <button class="button" onclick="alert('You clicked me! 🥳')">Click me!</button>
+  <button class="button" onclick="logButtonClick()">Log something :)</button>
+  <p> Test </p>
 </body>
+<script>
+  function logButtonClick() {
+    console.log("Button clicked!");
+    fetch("/logme")
+      .then(() => console.log("Logged to server"))
+      .catch(err => console.error("Log failed", err));
+  }
+</script>
 </html>

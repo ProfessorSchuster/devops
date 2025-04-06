@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: skaffold-demo
-          image: skaffold-demo
+          image: ghcr.io/ProfessorSchuster/skaffold-demo:latest
           ports:
             - containerPort: 80
