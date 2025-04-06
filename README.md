@@ -37,7 +37,7 @@ kind create cluster --config kind-config.yaml
 kubectl label node kind-control-plane ingress-ready=true
 kubectl apply -k github.com/kubernetes/ingress-nginx/deploy/static/provider/kind
 ```
-2. Projekt starten
+### 2. Projekt starten
 ```bash
 skaffold dev
 ```
@@ -49,7 +49,7 @@ skaffold dev
 
 - Exponierung unter: http://localhost:8080
 
-💡 Was zeigt diese Demo?
+## 💡 Was zeigt diese Demo?
 Automatisches Build + Deployment mit Live-Reload (skaffold dev)
 
 Zugriff auf den Webserver über Ingress
@@ -58,19 +58,19 @@ Logging von Button-Klicks im Terminal via NGINX-Logs
 
 Optional: Push zu GHCR möglich
 
-🧼 Aufräumen
-bash
+## 🧼 Aufräumen
+```bash
 Kopieren
 Bearbeiten
 skaffold delete
 kind delete cluster
-📦 Optional: Push zu GitHub Container Registry
+```
+## 📦 Optional: Push zu GitHub Container Registry
 Image in skaffold.yaml auf ghcr.io/<username>/<repo> setzen. Dann:
 
-bash
-Kopieren
-Bearbeiten
+```bash
 docker login ghcr.io -u <username> --password-stdin
 skaffold run
+```
 ✍️ Autor
 Cedric aka ProfessorSchuster
