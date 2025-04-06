@@ -1,0 +1,13 @@
+network:
+  version: 2
+  ethernets:
+    eth1:
+      addresses:
+        - 10.0.0.2/24  # Statische IP für den Client
+      routes:
+        - to: 0.0.0.0/0
+          via: 10.0.0.1  # Gateway IP
+      nameservers:
+        addresses:
+          - 8.8.8.8
+          - 1.1.1.1

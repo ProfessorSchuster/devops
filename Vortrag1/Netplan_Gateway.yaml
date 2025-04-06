@@ -1,0 +1,8 @@
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: true  # Öffentliche IP per DHCP
+    eth1:
+      addresses:
+        - 10.0.0.1/24  # Statische IP für internes Netzwerk

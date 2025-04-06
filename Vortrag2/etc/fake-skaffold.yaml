@@ -1,0 +1,40 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: my-skaffold-demo-app
+build:
+  artifacts:
+    - image: ghcr.io/myuser/frontend
+      context: ./frontend
+      docker:
+        dockerfile: Dockerfile
+    - image: ghcr.io/myuser/backend
+      context: ./backend
+      docker:
+        dockerfile: Dockerfile
+  tagPolicy:
+    gitCommit: {}  # z. B. ghcr.io/...:c1a2b3
+  local:
+    push: true
+    useDockerCLI: true
+    useBuildkit: true
+deploy:
+  kubectl:
+    manifests:
+      - k8s/frontend-deployment.yaml
+      - k8s/frontend-service.yaml
+      - k8s/backend-deployment.yaml
+      - k8s/backend-service.yaml
+      - k8s/ingress.yaml
+profiles:
+  - name: dev
+    build:
+      local:
+        push: false
+    deploy:
+      kubectl:
+        manifests:
+          - k8s/
+
+
+
