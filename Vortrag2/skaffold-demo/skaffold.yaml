@@ -26,11 +26,3 @@ profiles:
     build:
       local:
         push: true
-      artifacts:
-        - image: ghcr.io/professorschuster/skaffold-demo
-    deploy:
-      kubectl:
-        manifests:
-          - deployment.yaml
-          - service.yaml
-          - ingress.yaml
